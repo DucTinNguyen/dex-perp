@@ -11,6 +11,7 @@ import tensor from "@/images/landing_page/tensor.svg";
 import block from "@/images/landing_page/blockpartner.svg";
 import lineright from "@/images/landing_page/lineright.svg"
 import lineleft from "@/images/landing_page/lineleft.svg"
+import bgContent from "@/images/landing_page/content.svg"
 const Partner = () => {
   return (
     <Background color="relative w-full h-full overflow-hidden py-[80px] bg-black">
