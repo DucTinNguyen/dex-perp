@@ -17,7 +17,8 @@ const config: Config = {
   			'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
 				'category-gradient': 'linear-gradient(90deg, rgba(140, 227, 57, 0.40) -5.56%, rgba(140, 227, 57, 0.00) 100%), rgba(255, 255, 255, 0.20)',
 				'category-tag-active': 'radial-gradient(50.83% 100% at 50% 0%, rgba(138, 255, 71, 0.50) 0%, rgba(59, 153, 43, 0.08) 100%)',
-				'category-tag': 'linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.12) 100%)'
+				'category-tag': 'linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0.12) 100%)',
+			'gradient-black':'linear-gradient(180deg, rgba(11, 11, 11, 0) 50%, rgba(11, 11, 11, 0.6) 59.51%, #0B0B0B 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))',
   		},
   		fontFamily: {
 			satoshi: ['var(--font-satoshi)'],
