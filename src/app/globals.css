@@ -17,7 +17,7 @@
 }
 
 body{
-  font-family: var(--chakra_petch);
+  font-family: var(--font-satoshi);
 }
 
 @layer utilities {

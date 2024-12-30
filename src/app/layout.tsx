@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import Head from "next/head";
-import { Inter, Chakra_Petch } from 'next/font/google'
-import "./globals.css";
 import AppWalletProvider from "@/providers/wallet.provider";
+import type { Metadata } from "next";
+import Head from "next/head";
 import { Suspense } from "react";
+import "./globals.css";
+import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://dashboard.cellprotocol.science/"),
@@ -17,23 +16,37 @@ export const metadata: Metadata = {
   }
 };
 
-const chakra_petch = Chakra_Petch({
-  weight: ['400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--chakra_petch'
+const satoshi = localFont({
+  src: [
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Variable.woff",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Regular.woff",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Medium.woff",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/satoshi/Satoshi-Bold.woff",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-satoshi",
+});
+
+const ppneubit = localFont({
+  src: "../../public/fonts/pepe/ppneuebit-bold-webfont.woff",
+  weight: "600",
+  variable: "--font-ppneubit"
 })
-
-
-const inter = Inter({
-  weight: ['400', '700'],
-  style: ['normal'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--inter'
-})
-
 
 export default function RootLayout({
   children,
@@ -75,7 +88,7 @@ export default function RootLayout({
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className={`${chakra_petch.variable} ${inter.variable}`}>
+      <body className={`${satoshi.variable} ${ppneubit.variable}`}>
         <AppWalletProvider>
           <Suspense>
             {children}
