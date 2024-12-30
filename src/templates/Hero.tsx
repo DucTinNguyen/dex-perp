@@ -86,6 +86,7 @@ const Hero = () => (
         }
       />
     </Section>
+    
   </Background>
 );
 
