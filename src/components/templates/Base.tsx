@@ -4,15 +4,17 @@ import Partner from './Partner'
 import WhatIs from './WhatIs'
 import Offer from './Offer'
 import GetInTouch from './GetInTouch'
+import Footer from './Footer'
 
 const Base = () => {
   return (
     <div>
-        <Hero />
+        {/* <Hero /> */}
         <Partner/>
-        {/* <WhatIs/> */}
+        <WhatIs/>
         <Offer/>
         <GetInTouch/>
+        <Footer/>
     </div>
   )
 }
