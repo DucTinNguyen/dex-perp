@@ -1,10 +1,13 @@
-import WrapTradeComponent from '@/components/wrap-trade'
-import React from 'react'
+import StakePage from "@/components/stake";
+import WrapTradeComponent from "@/components/wrap-trade";
+import React from "react";
 
 const Stake = () => {
   return (
-    <WrapTradeComponent>trade</WrapTradeComponent>
-  )
-}
+    <WrapTradeComponent>
+      <StakePage />
+    </WrapTradeComponent>
+  );
+};
 
-export default Stake
+export default Stake;
