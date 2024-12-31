@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 type IHeroOneButtonProps = {
   title: ReactNode;
   description: ReactNode;
-  button: ReactNode;
+  button?: ReactNode;
   subtitle?: ReactNode;
 };
 

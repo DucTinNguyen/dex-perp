@@ -11,7 +11,7 @@ import lightRight from "@/images/landing_page/Lightright.svg"
 import meme from "@/images/landing_page/meme.svg"
 import { LinkHero, SocialHero } from '@/utils/hero';
 const Hero = () => (
-  <Background color="relative w-full h-full overflow-hidden">
+  <Background color="relative w-full h-screen overflow-hidden">
     <div className='absolute top-0 left-0 w-full z-[-1]'>
       <Image src={heroBG} alt='hero-bg' width={1000} height={1000} className='h-full w-full '/>
     </div>
@@ -22,7 +22,7 @@ const Hero = () => (
       <Image src={lightLeft} alt='hero-bg' width={1000} height={1000} className='h-full w-[1200px] '/>
     </div>
     <Section yPadding="py-6">
-      <div className='fixed z-50 top-5 left-0 w-full px-[192px]'>
+      <div className='fixed z-50 top-5 left-0 w-full px-[40px]'>
         <div className="grid grid-cols-3 items-center rounded-2xl bg-[linear-gradient(93.78deg,_rgba(17,18,20,0.18)_4.87%,_rgba(12,13,15,0.216)_75.88%)] px-4 py-2 border-[1px] border-[#FFFFFF0F] shadow-[inset_0px_1px_1px_1px_#FFFFFF26] backdrop-blur-[12px]">
           <div className="flex items-center">
             <Image src={logo} alt="logo" />
@@ -59,7 +59,7 @@ const Hero = () => (
       </div>
     </Section>
 
-    <Section yPadding="py-[63px]">
+    <Section yPadding="pb-[63px] pt-[143px]">
       <HeroOneButton
         title={
           <>

@@ -11,10 +11,9 @@ import tensor from "@/images/landing_page/tensor.svg";
 import block from "@/images/landing_page/blockpartner.svg";
 import lineright from "@/images/landing_page/lineright.svg"
 import lineleft from "@/images/landing_page/lineleft.svg"
-import bgContent from "@/images/landing_page/content.svg"
 const Partner = () => {
   return (
-    <Background color="relative w-full h-full overflow-hidden py-[80px] bg-black">
+    <Background color="relative w-full h-full overflow-hidden pt-[80px] pb-[120px] bg-black">
       <div className="mb-6 flex items-center justify-center">
         <div className="rounded-full bg-gradient-to-b from-white/[0.24] to-white/[0.64] p-[2px] backdrop-blur-[4px]">
           <div className="flex w-fit items-center gap-2 rounded-full bg-black/70 px-3 py-1">
@@ -74,14 +73,14 @@ const Partner = () => {
       </div>
       <div className="mx-auto max-w-[640px] relative">
         <div className="absolute top-0 left-0">
-          <Image src={lineleft} alt="line" width={100} height={100} className="w-full h-full"/>
+          <Image src={lineleft} alt="line" width={100} height={100} className="w-full h-full" />
         </div>
         <div className="absolute top-0 right-0">
-          <Image src={lineright} alt="line" width={100} height={100} className="w-full h-full"/>
+          <Image src={lineright} alt="line" width={100} height={100} className="w-full h-full" />
         </div>
-          <p className="px-20 font-satoshi text-xl text-center text-[#F0FFF57A]font-normal">
+        <p className="px-20 font-satoshi text-xl text-center text-[#F0FFF57A]font-normal">
           We are proud to collaborate with <span className="text-white">industry-leading blockchain ecosystems and communities</span> to deliver a seamless and powerful trading experience.
-          </p>
+        </p>
       </div>
     </Background>
   );
