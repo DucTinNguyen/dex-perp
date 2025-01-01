@@ -87,10 +87,10 @@ const MatrixTextAnimation = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
         className="break-words max-h-[200px] max-w-[600px] text-[64px] sm:text-[84px] text-shadow-lg bg-gradient-to-br from-[#A4FFB1] to-[#A4FFB1] inline-block text-transparent bg-clip-text font-ppneubit bg-blend-lighten my-auto"
-        style={{
-          textShadow: "0 0 10px #A4FFB1, 0 0 20px #00ff00",
-          // fontFamily: "monospace",
-        }}
+        // style={{
+        //   textShadow: "0 0 10px #A4FFB1, 0 0 20px #00ff00",
+        //   // fontFamily: "monospace",
+        // }}
       >
         {displayText}
       </motion.div>
