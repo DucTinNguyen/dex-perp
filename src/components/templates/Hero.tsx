@@ -116,10 +116,10 @@ const Hero = () => {
 
           {/* Marquee Section */}
         </div>
-        <div className="absolute bottom-0 left-0">
+        <div className="absolute bottom-20 left-0">
           {/* <div className="bg-gradient-black absolute top-[30px] left-0 w-[45%] h-[62px] rounded-full"></div> */}
           {/* <div className="bg-gradient-black absolute top-[30px] right-0 w-[45%] h-[62px] rounded-full"></div> */}
-          <Marquee className="pt-[31px] pb-[121px]">
+          <Marquee className="">
             {memeList.map((item) => (
               <motion.div
                 whileHover={{ scale: 1.2 }}
