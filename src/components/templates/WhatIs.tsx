@@ -36,7 +36,7 @@ const WhatIs = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
         >
-          <Section yPadding="h-full">
+          <Section yPadding="h-full relative">
             <div className="h-full">
               <div className="flex flex-col items-center justify-center h-full gap-1 sm:gap-8">
                 <Image
@@ -63,32 +63,32 @@ const WhatIs = () => {
                 />
               </div>
             </div>
+            {WhatIsList.map((item) => (
+              <motion.div
+                key={item.id}
+                style={{
+                  top: item.top,
+                  left: item.left,
+                }}
+                className={`hidden sm:flex px-3 py-2 absolute items-center gap-3 bg-white/5 shadow-[0_0_4px_-1px_rgba(2,29,13,0.12),inset_0_-4px_8px_-2px_rgba(255,255,255,0.37)] backdrop-blur-[10px] rounded-full`}
+                initial="hidden"
+                whileInView="visible"
+                variants={fadeIn}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                viewport={{ once: true }}
+              >
+                <Image
+                  src={item.icon}
+                  alt="rocket"
+                  width={50}
+                  height={50}
+                  className="w-[32px] h-[32px]"
+                />
+                <span className="text-[#F7FDFD] text-sm">{item.title}</span>
+              </motion.div>
+            ))}
           </Section>
         </motion.div>
-        {WhatIsList.map((item) => (
-          <motion.div
-            key={item.id}
-            style={{
-              top: item.top,
-              left: item.left,
-            }}
-            className={`hidden sm:flex px-3 py-2 absolute items-center gap-3 bg-white/5 shadow-[0_0_4px_-1px_rgba(2,29,13,0.12),inset_0_-4px_8px_-2px_rgba(255,255,255,0.37)] backdrop-blur-[10px] rounded-full`}
-            initial="hidden"
-            whileInView="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src={item.icon}
-              alt="rocket"
-              width={50}
-              height={50}
-              className="w-[32px] h-[32px]"
-            />
-            <span className="text-[#F7FDFD] text-sm">{item.title}</span>
-          </motion.div>
-        ))}
         {WhatIsListMobile.map((item) => (
           <motion.div
             key={item.id}
