@@ -16,146 +16,148 @@ import listCoin from "@/images/landing_page/Frame 2147225144.svg";
 const Offer = () => {
   return (
     <Background color="relative w-full h-full overflow-hidden py-[40px] sm:py-[100px] bg-black font-satoshi">
-      <Section yPadding="p-0">
-        <div className="mb-6 flex items-center justify-center">
-          <div className="rounded-full bg-gradient-to-b from-white/[0.24] to-white/[0.64] p-[2px] backdrop-blur-[4px]">
-            <div className="flex w-fit items-center gap-2 rounded-full bg-black/70 px-3 py-1">
-              <Image
-                src={grid}
-                alt="icon"
-                width={50}
-                height={50}
-                className="w-[15px] h-[15px]"
-              />
-              <span className="bg-gradient-to-br from-white to-[#999999] bg-clip-text text-sm sm:text-base font-medium leading-[22px] tracking-[-0.02em] text-transparent drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
-                Our Core
-              </span>
+      <div className="bg-[url('/images/landing_page/lineoffermobile.svg')] sm:bg-[url('/images/landing_page/lineoffer.svg')] bg-no-repeat w-full h-full bg-contain bg-center">
+        <Section yPadding="p-0">
+          <div className="mb-6 flex items-center justify-center">
+            <div className="rounded-full bg-gradient-to-b from-white/[0.24] to-white/[0.64] p-[2px] backdrop-blur-[4px]">
+              <div className="flex w-fit items-center gap-2 rounded-full bg-black/70 px-3 py-1">
+                <Image
+                  src={grid}
+                  alt="icon"
+                  width={50}
+                  height={50}
+                  className="w-[15px] h-[15px]"
+                />
+                <span className="bg-gradient-to-br from-white to-[#999999] bg-clip-text text-sm sm:text-base font-medium leading-[22px] tracking-[-0.02em] text-transparent drop-shadow-[0_0_8px_rgba(255,255,255,0.25)]">
+                  Our Core
+                </span>
+              </div>
             </div>
           </div>
-        </div>
-        <h1 className="uppercase text-center text-[#F0FFF5] text-shadow-custom font-ppneubit text-[32px] sm:text-[64px] font-bold mb-6 sm:mb-12">
-          What we offer?
-        </h1>
-        <div className="grid grid-cols-1 md:grid-cols-7 gap-5">
-          {/* First Card */}
-          <motion.div
-            className="relative overflow-hidden col-span-4 h-[360px] bg-[rgba(11,11,11,0.84)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
-                <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
-                <Image src={union} alt="union" width={25} height={25} className="w-[25px] h-[25px]" />
+          <h1 className="uppercase text-center text-[#F0FFF5] text-shadow-custom font-ppneubit text-[32px] sm:text-[64px] font-bold mb-6 sm:mb-12">
+            What we offer?
+          </h1>
+          <div className="grid grid-cols-1 md:grid-cols-7 gap-5">
+            {/* First Card */}
+            <motion.div
+              className="relative overflow-hidden col-span-4 h-[360px] bg-[rgba(11,11,11,0.4)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
+                  <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
+                  <Image src={union} alt="union" width={25} height={25} className="w-[25px] h-[25px]" />
+                </div>
+                <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
+                  Opportunities
+                </h3>
               </div>
-              <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
-                Opportunities
-              </h3>
-            </div>
-            <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
-              Early Leverage Access: Trade more of the latest and hottest tokens and unlock the potential for explosive gains. Access more, sooner.
-            </p>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-center">
-              <Image
-                src={haftearth}
-                alt="halfearth"
-                width={500}
-                height={360}
-                className="w-[500px] h-full"
-              />
-            </div>
-          </motion.div>
+              <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
+                Early Leverage Access: Trade more of the latest and hottest tokens and unlock the potential for explosive gains. Access more, sooner.
+              </p>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-center">
+                <Image
+                  src={haftearth}
+                  alt="halfearth"
+                  width={500}
+                  height={360}
+                  className="w-[500px] h-full"
+                />
+              </div>
+            </motion.div>
 
-          {/* Second Card */}
-          <motion.div
-            className="relative overflow-hidden col-span-4 md:col-span-3 h-[360px] bg-[rgba(11,11,11,0.84)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
-                <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
-                <Image src={ligth} alt="ligth" width={25} height={25} className="w-[25px] h-[25px]" />
+            {/* Second Card */}
+            <motion.div
+              className="relative overflow-hidden col-span-4 md:col-span-3 h-[360px] bg-[rgba(11,11,11,0.4)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
+                  <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
+                  <Image src={ligth} alt="ligth" width={25} height={25} className="w-[25px] h-[25px]" />
+                </div>
+                <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">Ease of Use</h3>
               </div>
-              <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">Ease of Use</h3>
-            </div>
-            <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
-              Few-clicks Interface: Already using DEXes? Using Lavarage will feel second nature – trade effortlessly with just a few clicks.
-            </p>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-start">
-              <Image
-                src={chart}
-                alt="chart"
-                width={500}
-                height={360}
-                className="w-[400px] h-full"
-              />
-            </div>
-          </motion.div>
+              <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
+                Few-clicks Interface: Already using DEXes? Using Lavarage will feel second nature – trade effortlessly with just a few clicks.
+              </p>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-start">
+                <Image
+                  src={chart}
+                  alt="chart"
+                  width={500}
+                  height={360}
+                  className="w-[400px] h-full"
+                />
+              </div>
+            </motion.div>
 
-          {/* Third Card */}
-          <motion.div
-            className="relative overflow-hidden col-span-4 md:col-span-3 h-[360px] bg-[rgba(11,11,11,0.84)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
-                <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
-                <Image src={shake} alt="shake" width={25} height={25} className="w-[25px] h-[25px]" />
+            {/* Third Card */}
+            <motion.div
+              className="relative overflow-hidden col-span-4 md:col-span-3 h-[360px] bg-[rgba(11,11,11,0.4)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
+                  <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
+                  <Image src={shake} alt="shake" width={25} height={25} className="w-[25px] h-[25px]" />
+                </div>
+                <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
+                  Partners in Profit
+                </h3>
               </div>
-              <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
-                Partners in Profit
-              </h3>
-            </div>
-            <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
-              Fair Market Price: All trades are done on top DEXs, always executed at true market prices.
-            </p>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-center">
-              <Image
-                src={listCoin}
-                alt="listCoin"
-                width={500}
-                height={360}
-                className="w-full h-full"
-              />
-            </div>
-          </motion.div>
+              <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF]">
+                Fair Market Price: All trades are done on top DEXs, always executed at true market prices.
+              </p>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-center">
+                <Image
+                  src={listCoin}
+                  alt="listCoin"
+                  width={500}
+                  height={360}
+                  className="w-full h-full"
+                />
+              </div>
+            </motion.div>
 
-          {/* Fourth Card */}
-          <motion.div
-            className="relative overflow-hidden col-span-4 h-[360px] bg-[rgba(11,11,11,0.84)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -100 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
-                <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
-                <Image src={guard} alt="guard" width={25} height={25} className="w-[25px] h-[25px]" />
+            {/* Fourth Card */}
+            <motion.div
+              className="relative overflow-hidden col-span-4 h-[360px] bg-[rgba(11,11,11,0.4)] border border-white/12 backdrop-blur-[24px] rounded-2xl p-8"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="flex items-center gap-3 mb-6">
+                <div className="relative flex justify-center items-center overflow-hidden w-10 h-10 bg-[rgba(255,254,249,0.04)] shadow-[inset_0px_0.625px_10px_rgba(238,255,248,0.34)] backdrop-blur-[2.5px] rounded-[7.5px]">
+                  <div className="w-[25.62px] h-[17.5px] absolute left-[calc(50%-12.81px-0.31px)] bottom-[-9.06px] bg-[#28FF21] opacity-45 blur-[6.25px]"></div>
+                  <Image src={guard} alt="guard" width={25} height={25} className="w-[25px] h-[25px]" />
+                </div>
+                <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
+                  Your Key, Your Crypto
+                </h3>
               </div>
-              <h3 className="font-ppneubit leading-6 text-[32px] font-bold text-white">
-                Your Key, Your Crypto
-              </h3>
-            </div>
-            <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF] w-full sm:w-[214px]">
-              Permissionless: Our fully decentralized platform ensures all activities are transparent and verifiable on-chain.
-            </p>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-end">
-              <Image
-                src={group}
-                alt="group"
-                width={500}
-                height={360}
-                className="w-[400px] h-full"
-              />
-            </div>
-          </motion.div>
-        </div>
-      </Section>
+              <p className="font-satoshi text-base sm:text-xl font-normal leading-[27px] text-[#B1BAB4BF] w-full sm:w-[214px]">
+                Permissionless: Our fully decentralized platform ensures all activities are transparent and verifiable on-chain.
+              </p>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full flex justify-end">
+                <Image
+                  src={group}
+                  alt="group"
+                  width={500}
+                  height={360}
+                  className="w-[400px] h-full"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </Section>
+      </div>
     </Background>
   );
 };

@@ -20,7 +20,7 @@ const TextRevealAnimation = () => {
           const randomText = Array.from(
             { length: length - revealedText.length },
             () => characters.charAt(Math.floor(Math.random() * characters.length))
-          ).join("");
+          ).join(" ");
           return revealedText + randomText;
         });
         currentIndex++;
@@ -48,14 +48,23 @@ const TextRevealAnimation = () => {
   }, []);
 
   return (
-    <motion.span
+    <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className={`w-[600px] ${displayText !== "The Next Generation Trading Platform" ? "h-[170px]":""} text-shadow-lg bg-gradient-to-br from-[#A4FFB1] to-[#A4FFB1] inline-block text-transparent bg-clip-text font-ppneubit text-[84px] bg-blend-lighten`}
+      className={`overflow-hidden break-words text-shadow-lg bg-gradient-to-br from-[#A4FFB1] to-[#A4FFB1] inline-block text-transparent bg-clip-text font-ppneubit bg-blend-lighten`}
+      style={{
+        fontSize: "clamp(64px, 5vw, 84px)", // Dynamically resize font based on screen size
+        // lineHeight: "1.2",
+        maxWidth: "600px", // Maximum width for the container
+        maxHeight: "180px", // Maximum height for the container
+        overflow: "hidden", // Ensure content doesn't overflow the container
+        textAlign: "center", // Center-align the text
+        // whiteSpace: "normal", // Allow text wrapping within the container
+      }}
     >
       {displayText}
-    </motion.span>
+    </motion.div>
   );
 };
 

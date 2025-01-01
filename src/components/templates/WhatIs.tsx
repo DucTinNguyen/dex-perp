@@ -96,7 +96,7 @@ const WhatIs = () => {
               top: item.top,
               left: item.left,
             }}
-            className={`flex px-[5px] py-[3px] absolute items-center gap-[5px] bg-white/5 shadow-[0_0_4px_-1px_rgba(2,29,13,0.12),inset_0_-4px_8px_-2px_rgba(255,255,255,0.37)] backdrop-blur-[10px] rounded-full`}
+            className={`flex md:hidden px-[5px] py-[3px] absolute items-center gap-[5px] bg-white/5 shadow-[0_0_4px_-1px_rgba(2,29,13,0.12),inset_0_-4px_8px_-2px_rgba(255,255,255,0.37)] backdrop-blur-[10px] rounded-full`}
             initial="hidden"
             whileInView="visible"
             variants={fadeIn}

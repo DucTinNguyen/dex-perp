@@ -9,7 +9,7 @@ import Footer from './Footer'
 const Base = () => {
   return (
     <div>
-        {/* <Hero /> */}
+        <Hero />
         <Partner/>
         <WhatIs/>
         <Offer/>
