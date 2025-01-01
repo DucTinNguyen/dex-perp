@@ -32,7 +32,7 @@ const StakeTab = ({ setActiveTab, activeTab }: ActiveProps) => {
             className={`px-[24px] py-[10px] text-center text-[16px] leading-[24px] cursor-pointer border-[1px] border-solid border-transparent ${
               activeTab == item.value
                 ? "text-[#fff] border-[1px] border-solid border-[#FFFFFF14] bg-gradient-to-b from-neutral-600 to-neutral-800 rounded-full  font-bold hover:from-neutral-500 hover:to-neutral-700 shadow-lg transition-colors"
-                : "font-medium text-[#99A0AE]"
+                : "font-medium text-[#99A0AE] border-[1px] border-solid border-transparent"
             }`}
           >
             {item.title}

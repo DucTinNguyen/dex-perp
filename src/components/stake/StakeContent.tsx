@@ -58,6 +58,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
       ]);
     }
   };
+  const [slippage, setSlippage] = useState("20");
   const dataClaim = [
     {
       id: 1,
@@ -101,7 +102,12 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
                 Slippage:
               </div>
               <div className="text-[#8CE339] text-[14px] leading-[20px] font-normal border-[#FFFFFF1A] border-solid border-[1px] py-[4px] px-[16px] rounded-[4px] bg-[#0A0A0A]">
-                20%
+                <input
+                  className="border-none outline-none bg-transparent max-w-[20px]"
+                  value={slippage}
+                  onChange={(e) => setSlippage(e.target.value)}
+                />
+                %
               </div>
             </div>
           </div>
@@ -181,7 +187,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
           <div className="w-full flex justify-between items-center">
             <div className="gap-[8px] flex items-center">
               <div className="text-[#525866] text-[14px] font-normal leading-[20px]">
-                Free
+                Fee
               </div>
               <div className="w-[20px] h-[20px]">
                 <Image src={noteGray} alt="note icon" objectFit="cover" />
@@ -191,7 +197,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
               0.00759 USDC
             </div>
           </div>
-          <button className="bg-[#8CE339] rounded-full w-full py-[20px] flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
+          <button className="bg-[#8CE339] rounded-full w-full py-[12px] flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
             Stake
           </button>
         </div>
@@ -199,7 +205,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
           <div className="min-w-[20px] h-[20px]">
             <Image src={note} alt="note icon" objectFit="cover" />
           </div>
-          <div className="font-normal text-[14px] leading-[20px] text-[#fff] flex flex-col gap-[12px">
+          <div className="font-normal text-[14px] leading-[20px] text-[#fff] flex flex-col gap-[12px]">
             Stake your SOL to receive TRXSOL (Traxos Staked SOL). Your staked
             amount will be actively utilized in our vault.
             <button className="w-[74px] font-medium border-b-[1px] border-solid border-b-[#fff]">
@@ -218,7 +224,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
               <Image src={logo} alt="logo" objectFit="cover" />
             </div>
             <div className="text-[32px] leading-[22.85px] text-[#fff] tracking-[0.5%] font-bold font-ppneubit">
-              Stake
+              Unstake
             </div>
           </div>
           <div className="w-full flex justify-between font-satoshi">
@@ -235,7 +241,12 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
                 Slippage:
               </div>
               <div className="text-[#8CE339] text-[14px] leading-[20px] font-normal border-[#FFFFFF1A] border-solid border-[1px] py-[4px] px-[16px] rounded-[4px] bg-[#0A0A0A]">
-                20%
+                <input
+                  className="border-none outline-none bg-transparent max-w-[20px]"
+                  value={slippage}
+                  onChange={(e) => setSlippage(e.target.value)}
+                />
+                %
               </div>
             </div>
           </div>
@@ -325,7 +336,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
               0.00759 USDC
             </div>
           </div>
-          <button className="bg-[#8CE339] rounded-full w-full py-[20px] flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
+          <button className="bg-[#8CE339] rounded-full w-full py-[12px] flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
             Unstake
           </button>
         </div>
