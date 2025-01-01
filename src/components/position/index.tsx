@@ -10,13 +10,13 @@ const PositionPage = () => {
   const menu = [
     {
       id: 1,
-      title: `Open (${value})`,
-      value: 0,
+      title: `Open (2)`,
+      value: 2,
     },
     {
       id: 2,
       title: "Close",
-      value: "",
+      value: 0,
     },
   ];
   return (
@@ -30,7 +30,10 @@ const PositionPage = () => {
             return (
               <div
                 key={item.id}
-                onClick={() => setActiveTab(item.id)}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  setValue(item.value);
+                }}
                 className={`px-[24px] py-[10px] text-center text-[16px] leading-[24px] cursor-pointer border-[1px] border-solid border-transparent flex items-center ${
                   activeTab == item.id
                     ? "text-[#fff] border-[1px] border-solid border-[#FFFFFF14] bg-gradient-to-b from-neutral-600 to-neutral-800 rounded-full  font-bold hover:from-neutral-500 hover:to-neutral-700 shadow-lg transition-colors"
