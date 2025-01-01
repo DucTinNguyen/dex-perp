@@ -71,13 +71,13 @@ const PositionContent = ({ value }: Props) => {
           </div>
         </div>
       ) : (
-        <div className="w-full flex items-center md:gap-[32px] gap-[16px] font-satoshi flex-wrap">
+        <div className="w-full grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-[32px] gap-[16px] font-satoshi flex-wrap">
           {data.map((item) => {
             return (
               <div
                 key={item.id}
                 onClick={() => setDataDetail(item)}
-                className="rounded-[24px] w-full max-w-[416px] border-solid bg-[#FFFFFF0A] shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,0.08),inset_0px_1px_0px_0px_rgba(255,255,255,0.08)] p-[16px] flex flex-col gap-[24px] backdrop-blur-[20px]"
+                className="rounded-[24px] w-full max-w-[416px] mx-auto border-solid bg-[#FFFFFF0A] shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,0.08),inset_0px_1px_0px_0px_rgba(255,255,255,0.08)] p-[16px] flex flex-col gap-[24px] backdrop-blur-[20px]"
               >
                 <div className="w-full bg-[#FFFFFF14] rounded-xl p-[12px] flex justify-between items-center">
                   <div className="flex items-center gap-[12px]">
