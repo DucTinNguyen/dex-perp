@@ -48,7 +48,7 @@ const Partner = () => {
       </motion.div>
 
       <div className="relative">
-        <div className="absolute top-0 left-0 w-full h-full z-[0]">
+        <div className="absolute top-0 left-0 w-full h-full z-[0] hidden sm:block">
           <Image
             src={partners}
             alt="partners"
@@ -58,9 +58,9 @@ const Partner = () => {
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black/70"></div>
         </div>
-        <Section yPadding="py-[80px] z-[10]">
+        <Section yPadding="py-[20px] sm:py-[80px] z-[10]">
           <motion.div
-            className="grid grid-cols-4 gap-4 sm:gap-6"
+            className="grid grid-cols-4 gap-4 sm:gap-6 bg-[url('/images/landing_page/partners.svg')] sm:bg-none w-full bg-no-repeat bg-center"
             initial="hidden"
             whileInView="visible"
             variants={{
