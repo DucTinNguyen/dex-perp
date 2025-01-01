@@ -43,10 +43,10 @@ const HeaderTrade = () => {
           ))}
         </div>
         <div className="flex items-center justify-end gap-5">
-          <button className='px-4 py-[10px] rounded-[12px] bg-[rgba(246,181,30,0.19)] flex items-center justify-center gap-2'>
+          <Link href={'/reward'} className='px-4 py-[10px] rounded-[12px] bg-[rgba(246,181,30,0.19)] flex items-center justify-center gap-2'>
             <Image src={icReward} alt='reward' />
             <span className='text-[22px] text-[#F6B51E] font-ppneubit'>Reward</span>
-          </button>
+          </Link>
           <button onClick={handleConnect} className='px-4 py-[10px] rounded-[12px] bg-[#fff] shadow-[0px_8px_8px_-4px_rgba(185,191,201,0.50)] flex items-center justify-center gap-2'>
             <Image src={icConnect} alt='reward' />
             <span className='text-[22px] text-[#26282B] font-ppneubit'>
