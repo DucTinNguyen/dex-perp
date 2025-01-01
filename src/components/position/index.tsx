@@ -2,13 +2,15 @@
 import Image from "next/image";
 import positionBanner from "@/images/position/positionBanner.png";
 import { useState } from "react";
+import PositionContent from "./PositionContent";
 
 const PositionPage = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const [value, setValue] = useState(2);
   const menu = [
     {
       id: 1,
-      title: "Open (0)",
+      title: `Open (${value})`,
       value: 0,
     },
     {
@@ -40,17 +42,7 @@ const PositionPage = () => {
             );
           })}
         </div>
-        <div className="w-full max-w-[326px] py-[29px] flex flex-col gap-[32px] font-satoshi">
-          <div className="w-full px-[45.55px]">
-            <div className="w-full h-[240px] ">
-              <Image src={positionBanner} alt="banner" objectFit="cover" />
-            </div>
-          </div>
-          <div className="text-center text-[14px] font-medium leading-[20px] text-[#99A0AE] tracking-[0.5%]">
-            You have no closed positions (only recently closed positions will be
-            displayed).
-          </div>
-        </div>
+        <PositionContent value={value} />
       </div>
     </div>
   );
