@@ -49,6 +49,24 @@ export const SocialHero = [
     link: "/",
   },
 ];
+
+export const tradeHeader = [
+  {
+    id: 1,
+    title: "Trade",
+    link: "/trade",
+  },
+  {
+    id: 2,
+    title: "Position",
+    link: "/position",
+  },
+  {
+    id: 3,
+    title: "Stake",
+    link: "/stake",
+  },
+]
 export const memeList =[
   {
     id:1,

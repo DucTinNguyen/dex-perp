@@ -2,70 +2,100 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-const TextRevealAnimation = () => {
-  const targetText = `The Next Generation Trading Platform`;
-  const initialText = "Welcome to the Future"; // Static text displayed initially
-  const [displayText, setDisplayText] = useState(initialText);
-  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const intervalDuration = 100; // Animation speed
-  const repeatDelay = 5000; // Delay between animations
+const MatrixTextAnimation = () => {
+  const targetText = "The Next Generation Trading Platform";
+  const [displayText, setDisplayText] = useState("");
+  const matrixChars = "qwertyuiopas1234567890";
+  const [raindrops, setRaindrops] = useState<any>([]);
+  const intervalDuration = 50;
 
-  const startAnimation = () => {
+  // Matrix rain effect
+  useEffect(() => {
+    const columns = Math.floor(window.innerWidth / 20); // Adjust spacing
+    const initialRaindrops = Array.from({ length: columns }, (_, i) => ({
+      x: i * 20,
+      y: Math.random() * -1000,
+      speed: 5 + Math.random() * 15,
+      char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
+    }));
+    setRaindrops(initialRaindrops);
+
+    const rainInterval = setInterval(() => {
+      setRaindrops((drops: any) =>
+        drops.map((drop: any) => ({
+          ...drop,
+          y:
+            drop.y > window.innerHeight
+              ? Math.random() * -100
+              : drop.y + drop.speed,
+          char:
+            Math.random() > 0.95
+              ? matrixChars[Math.floor(Math.random() * matrixChars.length)]
+              : drop.char,
+        }))
+      );
+    }, 50);
+
+    return () => clearInterval(rainInterval);
+  }, []);
+
+  // Text reveal effect
+  useEffect(() => {
     let currentIndex = 0;
-    const length = targetText.length;
-    const intervalId = setInterval(() => {
-      if (currentIndex < length) {
+    const textInterval = setInterval(() => {
+      if (currentIndex <= targetText.length) {
         setDisplayText((prev) => {
-          const revealedText = targetText.substring(0, currentIndex + 1);
-          const randomText = Array.from(
-            { length: length - revealedText.length },
-            () => characters.charAt(Math.floor(Math.random() * characters.length))
+          const revealed = targetText.substring(0, currentIndex);
+          const scrambled = Array.from(
+            { length: targetText.length - currentIndex },
+            () => matrixChars[Math.floor(Math.random() * matrixChars.length)]
           ).join(" ");
-          return revealedText + randomText;
+          return revealed + scrambled;
         });
         currentIndex++;
       } else {
-        clearInterval(intervalId); // Stop the interval when done
+        clearInterval(textInterval);
       }
     }, intervalDuration);
-  };
 
-  useEffect(() => {
-    const animationTimeout = setTimeout(() => {
-      startAnimation();
-    }, 2000); // Delay before starting the animation
-
-    const repeatInterval = setInterval(() => {
-      setDisplayText(initialText); // Reset to initial text
-      setTimeout(startAnimation, 2000); // Restart animation after delay
-    }, repeatDelay);
-
-    // Cleanup
-    return () => {
-      clearTimeout(animationTimeout);
-      clearInterval(repeatInterval);
-    };
+    return () => clearInterval(textInterval);
   }, []);
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      className={`overflow-hidden break-words text-shadow-lg bg-gradient-to-br from-[#A4FFB1] to-[#A4FFB1] inline-block text-transparent bg-clip-text font-ppneubit bg-blend-lighten`}
-      style={{
-        fontSize: "clamp(64px, 5vw, 84px)", // Dynamically resize font based on screen size
-        // lineHeight: "1.2",
-        maxWidth: "600px", // Maximum width for the container
-        maxHeight: "180px", // Maximum height for the container
-        overflow: "hidden", // Ensure content doesn't overflow the container
-        textAlign: "center", // Center-align the text
-        // whiteSpace: "normal", // Allow text wrapping within the container
-      }}
-    >
-      {displayText}
-    </motion.div>
+    <div>
+      {/* Matrix rain */}
+      {raindrops.map((drop: any, i: any) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0.5 }}
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute text-[#00ff00] text-lg font-matrix"
+          style={{
+            left: `${drop.x}px`,
+            top: `${drop.y}px`,
+            textShadow: "0 0 8px #00ff00",
+          }}
+        >
+          {drop.char}
+        </motion.div>
+      ))}
+
+      {/* Main text */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2 }}
+        className="break-words max-h-[200px] max-w-[600px] text-[64px] sm:text-[84px] text-shadow-lg bg-gradient-to-br from-[#A4FFB1] to-[#A4FFB1] inline-block text-transparent bg-clip-text font-ppneubit bg-blend-lighten my-auto"
+        style={{
+          textShadow: "0 0 10px #A4FFB1, 0 0 20px #00ff00",
+          // fontFamily: "monospace",
+        }}
+      >
+        {displayText}
+      </motion.div>
+    </div>
   );
 };
 
-export default TextRevealAnimation;
+export default MatrixTextAnimation;
