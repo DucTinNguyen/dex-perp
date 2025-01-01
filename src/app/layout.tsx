@@ -6,13 +6,11 @@ import "./globals.css";
 import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dashboard.cellprotocol.science/"),
-  title: "THE FUTURE OF DECENTRALIZED SCIENCE",
-  description: "Discover the next wave of research: blockchain powered and boundless",
+  title: "The Next Generation Trading Platform",
+  description: "Unleash the potential of your digital assets with a platform designed for the modern trader.",
   openGraph: {
-    title: "THE FUTURE OF DECENTRALIZED SCIENCE",
-    description: "Discover the next wave of research: blockchain powered and boundless",
-    url: new URL("https://dashboard.cellprotocol.science/")
+    title: "The Next Generation Trading Platform",
+    description: "Unleash the potential of your digital assets with a platform designed for the modern trader.",
   }
 };
 
@@ -56,18 +54,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>THE FUTURE OF DECENTRALIZED SCIENCE</title>
+        <title>The Next Generation Trading Platform</title>
         <meta
           name="description"
-          content="Discover the next wave of research: blockchain powered and boundless"
+          content="Unleash the potential of your digital assets with
+a platform designed for the modern trader."
         />
         <meta property="og:image" content="./opengraph-image.png"></meta>
         <meta property="og:url" content="https://dashboard.cellprotocol.science"></meta>
-        <meta property="og:title" content="THE FUTURE OF DECENTRALIZED SCIENCE"></meta>
+        <meta property="og:title" content="The Next Generation Trading Platform"></meta>
         <meta property="og:site_name" content="https://dashboard.cellprotocol.science"></meta>
         <meta
           property="og:description"
-          content="Discover the next wave of research: blockchain powered and boundless"
+          content="Unleash the potential of your digital assets with
+a platform designed for the modern trader."
         />
         <link
           rel="apple-touch-icon"
