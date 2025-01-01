@@ -4,7 +4,6 @@ import solIcon from "@/images/stake/solana.png";
 import trxSol from "@/images/stake/solana-SOL.png";
 import swapIcon from "@/images/stake/swap-icon.png";
 import claimLogo from "@/images/stake/claim-logo.png";
-import note from "@/images/stake/note.png";
 import noteGray from "@/images/stake/note-gray.png";
 import { useState } from "react";
 interface ActiveProps {
@@ -201,18 +200,6 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
             Stake
           </button>
         </div>
-        <div className="w-full rounded-2xl bg-[#335CFF14] border-[1px] border-solid border-[#1342FF3D] backdrop-blur-[40px] p-[12px] flex items-start gap-[12px]">
-          <div className="min-w-[20px] h-[20px]">
-            <Image src={note} alt="note icon" objectFit="cover" />
-          </div>
-          <div className="font-normal text-[14px] leading-[20px] text-[#fff] flex flex-col gap-[12px]">
-            Stake your SOL to receive TRXSOL (Traxos Staked SOL). Your staked
-            amount will be actively utilized in our vault.
-            <button className="w-[74px] font-medium border-b-[1px] border-solid border-b-[#fff]">
-              Learn more
-            </button>
-          </div>
-        </div>
       </div>
     );
   } else if (activeTab == "unstake") {
@@ -326,7 +313,7 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
           <div className="w-full flex justify-between items-center">
             <div className="gap-[8px] flex items-center">
               <div className="text-[#525866] text-[14px] font-normal leading-[20px]">
-                Free
+                Fee
               </div>
               <div className="w-[20px] h-[20px]">
                 <Image src={noteGray} alt="note icon" objectFit="cover" />
@@ -339,18 +326,6 @@ const StakeContent = ({ activeTab }: ActiveProps) => {
           <button className="bg-[#8CE339] rounded-full w-full py-[12px] flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
             Unstake
           </button>
-        </div>
-        <div className="w-full rounded-2xl bg-[#335CFF14] border-[1px] border-solid border-[#1342FF3D] backdrop-blur-[40px] p-[12px] flex items-start gap-[12px]">
-          <div className="min-w-[20px] h-[20px]">
-            <Image src={note} alt="note icon" objectFit="cover" />
-          </div>
-          <div className="font-normal text-[14px] leading-[20px] text-[#fff] flex flex-col gap-[12px]">
-            Unstake your TRXSOL (Traxos Staked SOL) to receive SOL. It may take
-            up to 5 days before you can claim your funds.
-            <button className="w-[74px] font-medium border-b-[1px] border-solid border-b-[#fff]">
-              Learn more
-            </button>
-          </div>
         </div>
       </div>
     );

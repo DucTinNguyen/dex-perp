@@ -14,7 +14,7 @@ const StakePage = () => {
             <StakeTab setActiveTab={setActiveTab} activeTab={activeTab} />
             <StakeContent activeTab={activeTab} />
           </div>
-          <Liquidity />
+          <Liquidity activeTab={activeTab} />
         </div>
       </div>
     </div>
