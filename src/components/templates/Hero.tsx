@@ -115,27 +115,27 @@ const Hero = () => {
           </Section>
 
           {/* Marquee Section */}
-          <div className="relative">
-            {/* <div className="bg-gradient-black absolute top-[30px] left-0 w-[45%] h-[62px] rounded-full"></div> */}
-            {/* <div className="bg-gradient-black absolute top-[30px] right-0 w-[45%] h-[62px] rounded-full"></div> */}
-            <Marquee className="pt-[31px] pb-[121px]">
-              {memeList.map((item) => (
-                <motion.div
-                  whileHover={{ scale: 1.2 }}
-                  key={item.id}
-                  className="mx-5"
-                >
-                  <Image
-                    src={item.image}
-                    alt="meme"
-                    width={100}
-                    height={100}
-                    className="w-[60px]"
-                  />
-                </motion.div>
-              ))}
-            </Marquee>
-          </div>
+        </div>
+        <div className="absolute bottom-20 left-0">
+          {/* <div className="bg-gradient-black absolute top-[30px] left-0 w-[45%] h-[62px] rounded-full"></div> */}
+          {/* <div className="bg-gradient-black absolute top-[30px] right-0 w-[45%] h-[62px] rounded-full"></div> */}
+          <Marquee className="">
+            {memeList.map((item) => (
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                key={item.id}
+                className="mx-5"
+              >
+                <Image
+                  src={item.image}
+                  alt="meme"
+                  width={100}
+                  height={100}
+                  className="w-[60px]"
+                />
+              </motion.div>
+            ))}
+          </Marquee>
         </div>
       </motion.div>
     </Background>

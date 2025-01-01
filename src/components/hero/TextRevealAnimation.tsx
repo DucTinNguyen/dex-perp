@@ -13,7 +13,7 @@ const MatrixTextAnimation = () => {
   useEffect(() => {
     const columns = Math.floor(window.innerWidth / 20); // Adjust spacing
     const initialRaindrops = Array.from({ length: columns }, (_, i) => ({
-      x: i * 20,
+      x: i * 30,
       y: Math.random() * -1000,
       speed: 5 + Math.random() * 15,
       char: matrixChars[Math.floor(Math.random() * matrixChars.length)],
