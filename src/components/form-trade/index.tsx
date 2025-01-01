@@ -12,6 +12,8 @@ import YouPay from "./you-pay"
 import YouReceived from "./you-received"
 import InfoDisplay from "./infor-display"
 import LoanSummary from "./loan-summary"
+import LeverageSelector from "./leverage"
+import { useSearchParams } from "next/navigation"
 
 const FormTrade = () => {
 
@@ -31,26 +33,29 @@ const FormTrade = () => {
     },
   ]);
 
+  const pathName = useSearchParams()
+  const tab = pathName.get('tab');
 
   return (
     <main>
-      <FormTabTrade />
-      <div className="mt-4 rounded-[24px] border-solid bg-[#FFFFFF0A] shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,0.08),inset_0px_1px_0px_0px_rgba(255,255,255,0.08)] p-[16px] flex flex-col gap-[16px] backdrop-blur-[20px]">
-       <FormHead />
+      <FormTabTrade tab={String(tab)} />
+      <section className="mt-4 rounded-[24px] border-solid bg-[#FFFFFF0A] shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,0.08),inset_0px_1px_0px_0px_rgba(255,255,255,0.08)] p-[16px] flex flex-col gap-[16px] backdrop-blur-[20px]">
+        <FormHead tab={String(tab)} />
         <div className="w-full flex justify-end font-satoshi">
           <Slippage slippage={slippage} setSlippage={setSlippage}/>
         </div>
         <div className="relative w-full flex flex-col items-center justify-center gap-[4px] font-satoshi">
-          <YouPay />
-          <YouReceived />
+          <YouPay tab={String(tab)} />
+          {tab === 'long' && <LeverageSelector />}
+          <YouReceived tab={String(tab)} />
         </div>
         <InfoDisplay title="Fee" value="1" currency="USDC" />
         <InfoDisplay title="Total" value="11" currency="USDC" />
         <button className="bg-[#8CE339] rounded-full w-full py-4 flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
           Long
         </button>
-      </div>
-      <LoanSummary />
+      </section>
+      {tab === 'long' && <LoanSummary />}
 
     </main>
   )

@@ -16,10 +16,7 @@ const menu = [
     },
 ];
 
-const FormTabTrade = () => {
-
-    const pathName = useSearchParams()
-    const tab = pathName.get('tab');
+const FormTabTrade = ({tab}: {tab: string}) => {
     
     
   return (

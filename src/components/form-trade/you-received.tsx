@@ -4,7 +4,7 @@ import solIcon from "@/images/stake/solana.png";
 import trxSol from "@/images/stake/solana-SOL.png";
 import arrow from "@/images/trade/arrow.svg"
 
-const YouReceived = () => {
+const YouReceived = ({ tab }: { tab: string }) => {
 
     const solToken = [
         {
@@ -35,7 +35,7 @@ const YouReceived = () => {
                     </div>
                     <div>
                         <div className="text-[14px] font-normal leading-[20px] text-[#99A0AE]">
-                            You receive
+                            {tab === 'long' ? 'You long' : 'You buy'}
                         </div>
                         <div className="text-[#FFFFFF] font-bold leading-[24px] text-[16px] tracking-[0.5%] flex items-center gap-1">
                             {solToken[0].title}
@@ -44,8 +44,10 @@ const YouReceived = () => {
                     </div>
                 </div>
                 <div className="flex items-center gap-[4px] font-normal leading-[20px] text-[14px]">
-                    <div className="text-[#99A0AE]">Balance:</div>
-                    <div className="text-[#FFFFFF]">0</div>
+                    {tab === 'swap' ? <div className="text-[#99A0AE]">Balance:</div> : <p className="flex flex-col gap-[2px] text-sm">
+                        <span className="text-[#99A0AE] font-normal">MAX BORROW AMT</span>
+                        <span className="text-[#fff] font-medium block text-end">47,759.497 USDC</span>
+                    </p>}
                 </div>
             </div>
             <div className="w-full flex justify-end text-[32px] leading-[43px] font-medium tracking-[0.5%] text-[#fff] h-[43px] items-center">
