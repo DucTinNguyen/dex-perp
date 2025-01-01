@@ -4,23 +4,12 @@ import arrow from "@/images/trade/arrow.svg";
 import Image from "next/image";
 import { useState } from "react";
 import ModalNativeToken from "./modal-native-token";
+import { useLongStore } from "@/stores/useLong";
 
 const YouPay = ({ tab }: { tab: string }) => {
 
-    const solToken = [
-        {
-            id: 1,
-            title: "SOL",
-            icon: solIcon,
-            value: "1",
-        },
-        {
-            id: 2,
-            title: "TRXSOL",
-            icon: trxSol,
-            value: "0.8202",
-        },
-    ];
+    const {payToken, longToken} = useLongStore();
+    
 
     const [isOpenNative, setOpenNative] = useState(false);
 
@@ -37,7 +26,7 @@ const YouPay = ({ tab }: { tab: string }) => {
                     <div className="flex items-center gap-[12px]">
                         <div className="w-[40px] h-[40px]">
                             <Image
-                                src={solToken[0].icon}
+                                src={payToken.icon}
                                 alt="icon"
                                 objectFit="cover"
                             />
@@ -47,7 +36,7 @@ const YouPay = ({ tab }: { tab: string }) => {
                                 {tab === 'long' ? 'You pay' : 'You sell'}
                             </div>
                             <div className="text-[#FFFFFF] font-bold leading-[24px] text-[16px] tracking-[0.5%] flex items-center gap-1">
-                                {solToken[0].title}
+                                {payToken.symbol}
                                 <Image src={arrow} alt="arrow" />
                             </div>
                         </div>
@@ -58,7 +47,7 @@ const YouPay = ({ tab }: { tab: string }) => {
                     </div>
                 </section>
                 <section className="w-full flex justify-end text-[32px] leading-[43px] font-medium tracking-[0.5%] text-[#fff] h-[43px] items-center">
-                    {solToken[0].value}
+                    {0}
                 </section>
                 <section className="flex justify-end w-full">
                     <button className="text-[#8CE339] text-[14px] leading-[20px] font-bold uppercase">

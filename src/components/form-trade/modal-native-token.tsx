@@ -1,26 +1,11 @@
 import React, { Fragment } from 'react'
 import { Button, Dialog, DialogPanel, DialogTitle, Transition } from '@headlessui/react'
-import solIcon from "@/images/stake/solana.png";
-import usdc from '@/images/trade/usdc.svg'
+
 import Image from 'next/image';
 import { shortAddress } from '@/utils/address';
+import { nativeToken } from '@/utils/tokens';
 
 const ModalNativeToken = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (value: boolean) => void }) => {
-
-    const nativeToken = [
-        {
-            icon: solIcon,
-            name: 'Solana',
-            symbol: 'SOL',
-            address: ''
-        },
-        {
-            icon: usdc,
-            name: 'USD Coin',
-            symbol: 'USDC',
-            address: 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v'
-        },
-    ]
 
     const closeModalNativeToken = () => {
         setIsOpen(false);
@@ -53,14 +38,13 @@ const ModalNativeToken = ({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (
                                         <div className='flex items-center gap-2'>
                                             <Image width={32} height={32} src={item.icon} alt='icon' />
                                             <span>{item.name}</span>
-                                            <span className='text-xs p-2 bg-black rounded-full'>{shortAddress(item.address)}</span>
+                                            {item.address && <span className='text-xs p-2 bg-black rounded-full'>{shortAddress(item.address)}</span>}
                                         </div>
                                         <span>{item.symbol}</span>
                                     </div>
                                 )
                             })}
                         </section>
-
                     </DialogPanel>
                 </div>
             </div>

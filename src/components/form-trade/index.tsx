@@ -14,27 +14,16 @@ import InfoDisplay from "./infor-display"
 import LoanSummary from "./loan-summary"
 import LeverageSelector from "./leverage"
 import { useSearchParams } from "next/navigation"
+import { useLongStore } from "@/stores/useLong"
 
 const FormTrade = () => {
 
-    const [slippage, setSlippage] = useState(20);
-  const [solToken, setSolToken] = useState([
-    {
-      id: 1,
-      title: "SOL",
-      icon: solIcon,
-      value: "1",
-    },
-    {
-      id: 2,
-      title: "TRXSOL",
-      icon: trxSol,
-      value: "0.8202",
-    },
-  ]);
+  const [slippage, setSlippage] = useState(20);
 
   const pathName = useSearchParams()
   const tab = pathName.get('tab');
+
+  const {payToken, longToken} = useLongStore();
 
   return (
     <main>
