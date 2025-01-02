@@ -1,8 +1,10 @@
 import React from 'react'
-
+import {DataTableDemo} from "@/components/Table/Table"
 const InformationToken = () => {
   return (
-    <main>InformationToken</main>
+    <main className='text-white'>
+      <DataTableDemo/>
+    </main>
   )
 }
 
