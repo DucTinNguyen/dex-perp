@@ -5,6 +5,7 @@ import checkIcon from "@/images/position/check.png";
 import Image from "next/image";
 import { useState } from "react";
 import ModalDetail from "./ModalDetail";
+import ModalClosePosition from "./ModalClosePotion";
 
 interface Props {
   value: number;
@@ -12,6 +13,7 @@ interface Props {
 
 const PositionContent = ({ value }: Props) => {
   const [dataDetail, setDataDetail] = useState<any>();
+  const [closePosition, setClosePosition] = useState(false);
   const data = [
     {
       id: 1,
@@ -76,7 +78,6 @@ const PositionContent = ({ value }: Props) => {
             return (
               <div
                 key={item.id}
-                onClick={() => setDataDetail(item)}
                 className="rounded-[24px] w-full max-w-[416px] mx-auto border-solid bg-[#FFFFFF0A] shadow-[inset_0px_0px_0px_1px_rgba(255,255,255,0.08),inset_0px_1px_0px_0px_rgba(255,255,255,0.08)] p-[16px] flex flex-col gap-[24px] backdrop-blur-[20px]"
               >
                 <div className="w-full bg-[#FFFFFF14] rounded-xl p-[12px] flex justify-between items-center">
@@ -159,10 +160,16 @@ const PositionContent = ({ value }: Props) => {
                   </div>
                 </div>
                 <div className="w-full flex items-center gap-[24px] font-ppneubit">
-                  <button className="w-[50%] py-[12px] flex items-center justify-center text-[22px] leading-[24px] font-bold rounded-[12px] bg-[#FFFFFF] text-[#26282B]">
+                  <button
+                    onClick={() => setClosePosition(true)}
+                    className="w-[50%] py-[12px] flex items-center justify-center text-[22px] leading-[24px] font-bold rounded-[12px] bg-[#FFFFFF] text-[#26282B]"
+                  >
                     Close position
                   </button>
-                  <button className="w-[50%] py-[12px] flex items-center justify-center text-[22px] leading-[24px] font-bold rounded-[12px] text-[#fff] bg-[]">
+                  <button
+                    onClick={() => setDataDetail(item)}
+                    className="w-[50%] py-[12px] flex items-center justify-center text-[22px] leading-[24px] font-bold rounded-[12px] text-[#fff] bg-[]"
+                  >
                     View more
                   </button>
                 </div>
@@ -172,6 +179,9 @@ const PositionContent = ({ value }: Props) => {
         </div>
       )}
       {dataDetail && <ModalDetail setDataDetail={setDataDetail} />}
+      {closePosition && (
+        <ModalClosePosition setClosePosition={setClosePosition} />
+      )}
     </>
   );
 };
