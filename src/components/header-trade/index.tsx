@@ -36,7 +36,7 @@ const HeaderTrade = () => {
               className="flex h-[40px] items-center justify-center"
               key={item.id}
             >
-              <Link href={item.link} className={`px-2 font-medium ${item.link === pathName ? 'text-[#8CE339]' : 'text-[#99A0AE]'} text-base`}>
+              <Link href={item.link} className={`px-2 font-medium ${item.link.includes(pathName) ? 'text-[#8CE339]' : 'text-[#99A0AE]'} text-base`}>
                 {item.title}
               </Link>
             </div>
