@@ -7,7 +7,7 @@ import React from 'react'
 const Trade = () => {
   return (
     <WrapTradeComponent>
-      <section className='w-full lg:max-w-[1400px] mx-auto grid grid-cols-3 gap-4 py-10 md:py-[62px]'>
+      <section className='w-full lg:max-w-[1400px] mx-auto grid-cols-1 sm:grid grid-cols-3 gap-4 py-10 md:py-[62px]'>
         <div className='col-span-2'>
           <div className='grid grid-cols-1'>
             <DexChart />

@@ -19,7 +19,7 @@ export const LinkHero = [
   {
     id: 1,
     title: "Trade",
-    link: "/trade?tab=long",
+    link: "/trade?tab=long&table=holder",
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ export const tradeHeader = [
   {
     id: 1,
     title: "Trade",
-    link: "/trade?tab=long",
+    link: "/trade?tab=long&table=holder",
   },
   {
     id: 2,
