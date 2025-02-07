@@ -1,20 +1,16 @@
 'use client'
-import Image from "next/image"
-import FormTabTrade from "./tab"
-import icLong from '@/images/trade/long.svg'
-import icSwap from '@/images/trade/swap.svg'
-import { useState } from "react"
-import solIcon from "@/images/stake/solana.png";
-import trxSol from "@/images/stake/solana-SOL.png";
+import { useSearchParams } from "next/navigation"
+import { useCallback, useState } from "react"
 import FormHead from "./form-head"
+import InfoDisplay from "./infor-display"
+import LeverageSelector from "./leverage"
+import LoanSummary from "./loan-summary"
 import Slippage from "./slippage"
+import FormTabTrade from "./tab"
 import YouPay from "./you-pay"
 import YouReceived from "./you-received"
-import InfoDisplay from "./infor-display"
-import LoanSummary from "./loan-summary"
-import LeverageSelector from "./leverage"
-import { useSearchParams } from "next/navigation"
-import { useLongStore } from "@/stores/useLong"
+import { useWallet } from "@solana/wallet-adapter-react"
+import BtnConnectWallet from "../button/connect-wallet"
 
 const FormTrade = () => {
 
@@ -22,8 +18,13 @@ const FormTrade = () => {
 
   const pathName = useSearchParams()
   const tab = pathName.get('tab');
-
-  const {payToken, longToken} = useLongStore();
+  const {publicKey, disconnect} = useWallet()
+  const buttonClassName = "bg-[#8CE339] rounded-full w-full py-4 flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit capitalize"; 
+  
+  const renderButton = useCallback(() => {
+    if (!publicKey) return <BtnConnectWallet className={buttonClassName} />
+    return <button className={buttonClassName}>{tab}</button>
+  },[publicKey,tab])
 
   return (
     <main>
@@ -40,9 +41,7 @@ const FormTrade = () => {
         </div>
         <InfoDisplay title="Fee" value="1" currency="USDC" />
         <InfoDisplay title="Total" value="11" currency="USDC" />
-        <button className="bg-[#8CE339] rounded-full w-full py-4 flex justify-center text-[#076200] font-bold text-[22px] leading-[15.71px] font-ppneubit">
-          Long
-        </button>
+        {renderButton()}
       </section>
       {tab === 'long' && <LoanSummary />}
 
